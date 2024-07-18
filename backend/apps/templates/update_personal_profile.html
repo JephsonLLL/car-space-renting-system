@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Personal Profile</title>
+</head>
+<body>
+    <h1>Update Personal Profile</h1>
+    <form action="/update_personal_profile" method="POST" >
+        <label for="first_name">Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ profile.first_name }}" required>
+        <br><br>
+        <label for="last_name">Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ profile.last_name }}" required>
+        <br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="{{ profile.phone_number }}" pattern="0\d{9}"required title ="Phone must be 10 digits start with 0">
+        <br><br>
+        <!-- <label for="license">License:</label>
+        <input type="text" id="license" name="license" value="{{ profile.license }}" required>
+        <br><br> -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="{{ profile.password }}" required>
+        <br><br>
+        <input type="submit" value="Update">
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

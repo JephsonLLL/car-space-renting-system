@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+
+test.py
+*.db
+
+note.txt
+temp/

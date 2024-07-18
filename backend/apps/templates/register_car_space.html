@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title> HDCar Rental System</title>
+    </head>
+    <body>
+        <h2 style = "text-align: center;">Register Car Space</h2>
+		
+        
+        <form action="/register_car_space/"  method = "POST">
+
+            <label for="car_space_name"> Car Space:</label><br>
+            <input type="text" id="car_space_name" name="car_space_name"required><br><br>
+            <label for="daily_cost"> Daily Cost:</label>
+            <br><br>
+            <input type="text" id="daily_cost" name="daily_cost"required>
+            <!-- onclick="generatePrice() -->
+            <input type="button" id="recommand_price" name="recommand_price" value = "Recomand For Me">
+            <br><br>
+            <label for="start_date"> Available from:</label>
+            <input type="date" id="start_date" name="start_date"min="2023-06-28"required>
+            <label for="end_date"> Available until:</label>
+            <input type="date" id="end_date" name="end_date"min="2023-06-29"max="2024-12-31"required>
+            <br><br>
+            <label for="cardno"> Card Number:</label><br>
+            <input type="text" id="cardno" name="cardno"pattern="\d{12}" required title = "Card Number must be 12 digits">
+            <br><br>
+            <label for="csv"> CSV:</label><br>
+            <input type="text" id="csv" name="csv" pattern="\d{3}"required title= "CSV must be 3 digits">
+            <br><br>
+
+            <input type="submit" id = "register" value="Register">
+
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>
