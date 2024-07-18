@@ -1,23 +1,22 @@
 # car-space-renting-system
-A Web-based  platform for car spaces you wish to provide or make a booking for
+A Web-based  platform for car spaces you wish to provide or make a booking for.
 
-This project has two part, backend and frontend. 
+## back-end:
 
-To run back-end:
+```
+cd backend
+pip install -r requirements.txt
+cd apps
+python app.py
+```
 
-   cd back-end
-   pip install -r requirements.txt
-   cd apps
-   python app.py
+## front-end
+```
+cd frontend
+npm install
+npm start
+```
 
-To run front-end, you need:
-   cd frontend
 
-If you don't have npm and Node.js, you need install it by:
-   npm install -g npm
 
-To install the dependency
-   npm install
 
-finally run front-end:
-   npm start
